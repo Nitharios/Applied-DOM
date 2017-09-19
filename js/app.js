@@ -236,8 +236,7 @@
    *     event, 'light-green'
    */
    btn13.addEventListener('click', function(event) {
-    setMyLightClass = setMyLightClass.bind(this);
-    setMyLightClass(event, 'light-green');
+    setMyLightClass.bind(this)(event, 'light-green');
    });
 
   /*
@@ -258,13 +257,6 @@
    * Hint: Do not declare a new function expression as an event handler.
    */
 
-   // setMyLightClass = function(event, desiredClass) {
-   //  var lightId = this.dataset.lightId;
-   //  document.getElementById(lightId).className = desiredClass;
-   // };
-
-   btn15.addEventListener('click', function() {
-    setMyLightClass.bind(this)(event, 'light-green');
-  });
+   btn15.addEventListener('click', () => setMyLightClass.bind(btn15)(event, 'light-green'));
 
 }(window));
