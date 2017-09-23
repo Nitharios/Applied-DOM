@@ -1,3 +1,5 @@
+// jshint esversion: 6
+
 (function(window) {
 
   /*
@@ -75,7 +77,7 @@
    * to set the context to the correct object
    */
    btn2.addEventListener('click', () => {
-    setMyLightGreen.apply(this.document.activeElement);
+    setMyLightGreen.apply(event.target);
    });
 
   /*
@@ -109,7 +111,7 @@
    *   and passing two aditional arguments, event and 'light-green'
    */
    btn5.addEventListener('click', (event) => {
-    setMyLightClass.apply(this.document.activeElement, [event, 'light-green']);
+    setMyLightClass.apply(event.target, [event, 'light-green']);
    });
 
   /*
@@ -133,7 +135,7 @@
    * to set the context to the correct object
    */
    btn7.addEventListener('click', () => {
-    setMyLightGreen.call(this.document.activeElement);
+    setMyLightGreen.call(event.target);
    });
 
   /*
@@ -161,7 +163,7 @@
    *   and passing two aditional arguments, event and 'light-green'
    */
    btn9.addEventListener('click', (event) => {
-    setMyLightClass.call(this.document.activeElement, event, 'light-green');
+    setMyLightClass.call(event.target, event, 'light-green');
    });
 
   /*
